@@ -22,9 +22,9 @@ class Root(Tk):
     def reset(self):
         global count, h, m, s
         count = False
-        h = 0
-        m = 0
-        s = 0
+        h = 0  # Hours
+        m = 0  # Minutes
+        s = 0  # Seconds
         self.time.set("00:00:00")
         self.display = "00:00:00"
         stamps.clear()
@@ -65,9 +65,9 @@ class Root(Tk):
         if count is True:
             self.display = str(self.time.get())
             h, m, s = map(int, self.display.split(":"))
-            h = int(h)
-            m = int(m)
-            s = int(s)
+            h = int(h)  # Hours
+            m = int(m)  # Minutes
+            s = int(s)  # Seconds
 
             if s < 59:
                 s += 1
@@ -96,6 +96,7 @@ class Root(Tk):
             self.time.set(self.display)
 
             if count is True:
+                # For every 1 second run method self.start_timer()
                 self.after(1000, self.start_timer)
 
     """
@@ -135,7 +136,7 @@ class Root(Tk):
             lstnull = messagebox.askyesno(
                 title="File Empty",
                 message="You haven't marked any times." +
-                        "Would you still like to export?"
+                        " Would you still like to export?"
             )
             if lstnull is True:
                 fileSave()
@@ -148,9 +149,9 @@ class Root(Tk):
     Binded to self.winRecord_linkTxt as on click
     Takes user to the settings tab
     """
-    def onClick_winRecord_linkTxt(self, event):
-        global tabControl
-        tabControl.select(self.tab3)
+    # def onClick_winRecord_linkTxt(self, event):
+        # global tabControl
+        # tabControl.select(self.tab3)
 
     """
     On press of self.winRender_videoBtn
@@ -216,9 +217,17 @@ class Root(Tk):
     Find a way to close the video file
     """
     def renderVideo(self):
+        # End of file name for the video rendered by moviepy.editor
+        # Increments for every file made
         c = 1
+        # Stores value of selected radio button
+        x = self.v.get()
+        # Puts data from selected file into this array
         lstStampedTimes = []
+        # Nested list
+        # Contains the start and end time for cutting of video segment
         lstAnsTimes = []
+        # Time cushions around timestamps
         lstSubTime = [
             ("00:00:15"),
             ("00:00:30"),
@@ -251,23 +260,33 @@ class Root(Tk):
             for element in data:
                 lstStampedTimes.append(element.strip())
 
-            x = self.v.get()
-
             for time in lstStampedTimes:
+                # Iterates through timestamps and stores them
                 y = time
 
+                # Formats timestamp in the variable 'y'
                 t1 = datetime.strptime(str(y), "%H:%M:%S")
+                # Takes selected cushion time from radio button
+                """
+                Done by indexing the array 'lstSubTime' with value of the selected radio button and formats it
+                """
                 t2 = datetime.strptime(str(lstSubTime[x]), "%H:%M:%S")
+                # This is need for the addition of the two times to work
                 t0 = datetime.strptime("00:00:00", "%H:%M:%S")
 
+                # Stores the start time for the clip
                 ans1 = t1 - t2
+                # Stores the end time for the clip
                 ans2 = ((t1 - t0 + t2).time())
 
+                # Nests the list
                 lstAnsTimes.append([str(ans1), str(ans2)])
 
+            # Imported with moviepy.editor
             video = VideoFileClip(self.file1)
 
             for lst in lstAnsTimes:
+                # Iterates through the start and end times
                 start = lst[0]
                 end = lst[1]
 
@@ -306,12 +325,14 @@ class Root(Tk):
             text="Render"
         )
 
+        """
         # Creates the 'Settings' tab and frame
         self.tab3 = ttk.Frame(tabControl)
         tabControl.add(
             self.tab3,
             text="Settings"
         )
+        """
 
         tabControl.pack(
             expand=1,
@@ -323,7 +344,8 @@ class Root(Tk):
         # Initialises the widgets for the 'Render' tab
         self.winRender()
         # Initialises the widgets for the 'Settings' tab
-        self.winSettings()
+        # Explore possible features
+        # self.winSettings()
 
     def winRecord(self):
         # Style for buttons
@@ -430,6 +452,7 @@ class Root(Tk):
             sticky="NESW"
         )
 
+        """
         # Widget
         self.winRecord_linkBtn = ttk.Label(
             self.tab1,
@@ -447,6 +470,7 @@ class Root(Tk):
             "<Button-1>",  # Left mouse click
             self.onClick_winRecord_linkTxt  # Calls this method
         )
+        """
 
     def winRender(self):
         self.a = 0  # Column assignment for radio buttons
@@ -578,6 +602,7 @@ class Root(Tk):
             sticky="NESW"
         )
 
+    """
     def winSettings(self):
         # Widget
         self.winSettings_headerTxt = ttk.Label(
@@ -590,7 +615,7 @@ class Root(Tk):
             row=0,
             columnspan=2
         )
-
+    """
 
 if __name__ == "__main__":
     root = Root()
