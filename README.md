@@ -43,4 +43,4 @@ Within the near future expect to see the following fixes and changes (priority i
 # Developer
 Charlie Mockridge<br>
 Last updated: 2020-05-05 17:09:46<br>
-Version: 1.0.0<br>
+<p>Version: 1.0.0</p>
