@@ -5,7 +5,9 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import Radiobutton
 from datetime import datetime
-from moviepy.editor import *  # pip/pipenv install moviepy
+from moviepy.editor import *  # pip3/pipenv install moviepy
+from bs4 import BeautifulSoup  # pip3/pipenv install beautifulsoup4
+import requests  # pip3/pipenv install requests
 
 
 global count
@@ -15,6 +17,8 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
+    currentVersion = "1.0.1"
+
     """
     On press of self.winRecord_resetBtn
     Resets all variables and displays to 0 or null
@@ -346,6 +350,58 @@ class Root(Tk):
         # Initialises the widgets for the 'Settings' tab
         # Explore possible features
         # self.winSettings()
+        # Uses BeautifulSoup4 to check for updates
+        self.checkUpdates()
+
+    def checkUpdates(self):
+        try:
+            # This will store the text from the website that is being split
+            tagPara = []
+            # Gets the chosen website's source code
+            source = requests.get(
+                "https://github.com/charmockridge/ElgatoTool"
+            ).text
+            soup = BeautifulSoup(source, "lxml")
+            # Finds the area of interest
+            article = soup.find("article")
+            # Finds the area of interest
+            para = article.find_all("p")
+
+            # For every paragraph tag in the source code
+            for p in para:
+                # Prettifies the HTML and appends to array
+                tagPara.append(p.prettify())
+
+            # The last paragraph tag is the information of interest
+            version = tagPara[-1]
+            # Removes unwanted character
+            version = version.split("<p>")[1]
+            # Removes unwanted character
+            version = version.split("</p>")[0]
+            # Removes unwanted character
+            version = version.split("\n")[1]
+            # This is the string that is needed
+            version = version[-5:]
+
+            if version == self.currentVersion:
+                return
+            else:
+                messagebox.showinfo(
+                    title="Update is available",
+                    message="Your program is not up to date and there is a" +
+                            " more later version ready for download. It is" +
+                            " important that you update as there will be" +
+                            " patches, fixes and new implementations to" +
+                            " improve the program. Download from :" +
+                            " https://github.com/charmockridge/ElgatoTool"
+                )
+        except Exception:
+            messagebox.showerror(
+                title="Check for update has failed",
+                message="There has been an error whilst checking for an" +
+                        " update. Another update check will be run when your" +
+                        " application is re-opened at a later date."
+            )
 
     def winRecord(self):
         # Style for buttons
@@ -616,6 +672,7 @@ class Root(Tk):
             columnspan=2
         )
     """
+
 
 if __name__ == "__main__":
     root = Root()
