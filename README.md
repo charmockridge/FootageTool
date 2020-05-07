@@ -6,9 +6,12 @@ The Elgato Tool time stamps any points of interest within a gameplay recording. 
 This program is designed and developed for Windows. The use of this program on a Linux or Mac OS could and would result in an aesthetically unpleasing design and faulty code!
 
 Follow steps below for installation:
-* Run the following command in command prompt:
+* Run the following commands in command prompt:
     ```console
-    pip3 install moviepy
+    pip3 install moviepy <--- Needed for all versions
+    pip3 install beautifulsoup4 <--- Needed for version 1.0.1 +
+    pip3 install lxml <--- Needed for version 1.0.1 +
+    pip3 install requests <--- Needed for version 1.0.1 +
     ```
 * Clone this repository
 * Then either double click on the .py file or run the following command in command prompt:
@@ -25,12 +28,13 @@ From there, you should navigate over to the "Render" tab where you should press 
 
 ## Updates, Fixes and Patch Notes
 * Updated README.md
+* Automatic check for updates once program is opened - Check the ***Installation*** information to know if anymore packages are needed to be downloaded.
 
 
 ## Future Implements and Updates
 Within the near future expect to see the following fixes and changes (priority in descending order):
 
-* Automatic check for updates one program is opened
+* Update assister
 * Render in with user-defined resolution, fps and audio bitrate
 * Display quality details of inputted .mp4 file
 * Display quality details of rendered video
@@ -42,5 +46,5 @@ Within the near future expect to see the following fixes and changes (priority i
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-05-05 17:09:46
-<p>Version: 1.0.0</p>
+Last updated: 2020-05-07 22:04:48
+<p>Version: 1.0.1</p>
