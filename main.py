@@ -8,6 +8,7 @@ from datetime import datetime
 from moviepy.editor import *  # pip3/pipenv install moviepy
 from bs4 import BeautifulSoup  # pip3/pipenv install beautifulsoup4
 import requests  # pip3/pipenv install requests
+import os
 
 
 global count
@@ -17,7 +18,7 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
-    currentVersion = "1.0.1"
+    currentVersion = "1.1.0"
 
     """
     On press of self.winRecord_resetBtn
@@ -386,15 +387,21 @@ class Root(Tk):
             if version == self.currentVersion:
                 return
             else:
-                messagebox.showinfo(
+                askUpdate = messagebox.askyesno(
                     title="Update is available",
                     message="Your program is not up to date and there is a" +
                             " more later version ready for download. It is" +
                             " important that you update as there will be" +
                             " patches, fixes and new implementations to" +
-                            " improve the program. Download from :" +
-                            " https://github.com/charmockridge/ElgatoTool"
+                            " improve the program. Would you like to install" +
+                            " the update?"
                 )
+
+                if askUpdate is True:
+                    # Runs external command line command
+                    os.system('cmd /c "git pull"')
+                else:
+                    return
         except Exception:
             messagebox.showerror(
                 title="Check for update has failed",
