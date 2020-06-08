@@ -8,6 +8,7 @@ from datetime import datetime
 from moviepy.editor import *  # pip3/pipenv install moviepy
 from bs4 import BeautifulSoup  # pip3/pipenv install beautifulsoup4
 import requests  # pip3/pipenv install requests
+import subprocess
 import os
 
 
@@ -273,7 +274,8 @@ class Root(Tk):
                 t1 = datetime.strptime(str(y), "%H:%M:%S")
                 # Takes selected cushion time from radio button
                 """
-                Done by indexing the array 'lstSubTime' with value of the selected radio button and formats it
+                Done by indexing the array 'lstSubTime' with value of the
+                selected radio button and formats it
                 """
                 t2 = datetime.strptime(str(lstSubTime[x]), "%H:%M:%S")
                 # This is need for the addition of the two times to work
@@ -398,8 +400,7 @@ class Root(Tk):
                 )
 
                 if askUpdate is True:
-                    # Runs external command line command
-                    os.system('cmd /c "git pull"')
+                    subprocess.run("git pull")
                 else:
                     return
         except Exception:
