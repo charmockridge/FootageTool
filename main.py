@@ -5,11 +5,10 @@ from tkinter import filedialog
 from tkinter import messagebox
 from tkinter import Radiobutton
 from datetime import datetime
-from moviepy.editor import *  # pip3/pipenv install moviepy
+from moviepy.editor import VideoFileClip  # pip3/pipenv install moviepy
 from bs4 import BeautifulSoup  # pip3/pipenv install beautifulsoup4
 import requests  # pip3/pipenv install requests
 import subprocess
-import os
 
 
 global count
@@ -19,7 +18,7 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
-    currentVersion = "1.1.0"
+    currentVersion = "1.0.3"
 
     """
     On press of self.winRecord_resetBtn
@@ -301,8 +300,12 @@ class Root(Tk):
                 clip.write_videofile(
                     fileRender[:-4] + str(c) + ".mp4",
                     codec="libx264",
+                    audio_codec="aac",
+                    temp_audiofile="temp-audio.m4a",
+                    remove_temp=True,
                     audio_bitrate="192k"
                 )
+
                 c += 1
 
             timeStamps.close()
@@ -401,6 +404,9 @@ class Root(Tk):
 
                 if askUpdate is True:
                     subprocess.run("git pull")
+                    subprocess.run(
+                        "start https://github.com/charmockridge/ElgatoTool"
+                    )
                 else:
                     return
         except Exception:

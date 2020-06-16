@@ -8,7 +8,7 @@ This program is designed and developed for Windows. The use of this program on a
 Follow steps below for installation:
 * Run the following commands in command prompt (excluding the arrows and text after arrows):
     ```console
-    pip3 install moviepy     <--- Needed for all versions
+    pip3 install moviepy --upgrade     <--- Needed for all versions
     pip3 install beautifulsoup4     <--- Needed for version 1.0.1 +
     pip3 install lxml     <--- Needed for version 1.0.1 +
     pip3 install requests     <--- Needed for version 1.0.1 +
@@ -30,6 +30,7 @@ From there, you should navigate over to the "Render" tab where you should press 
 * Updated README.md
 * Automatic check for updates once the program is opened - Check the ***Installation*** information to know if any more packages are needed to be downloaded.
 * Update assister
+* Fixed render error - uninstall all packages (installed with pip) and reinstall following the **Installation** steps.
 
 
 ## Future Implements and Updates
@@ -46,5 +47,5 @@ Within the near future expect to see the following fixes and changes:
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-06-08 14:59:36
-<p>Version: 1.1.0</p>
+Last updated: 2020-06-16 15:15:46
+<p>Version: 1.0.3</p>
