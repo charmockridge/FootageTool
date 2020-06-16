@@ -9,6 +9,7 @@ from moviepy.editor import VideoFileClip  # pip3/pipenv install moviepy
 from bs4 import BeautifulSoup  # pip3/pipenv install beautifulsoup4
 import requests  # pip3/pipenv install requests
 import subprocess
+import time
 
 
 global count
@@ -265,9 +266,9 @@ class Root(Tk):
             for element in data:
                 lstStampedTimes.append(element.strip())
 
-            for time in lstStampedTimes:
+            for itime in lstStampedTimes:
                 # Iterates through timestamps and stores them
-                y = time
+                y = itime
 
                 # Formats timestamp in the variable 'y'
                 t1 = datetime.strptime(str(y), "%H:%M:%S")
@@ -290,6 +291,15 @@ class Root(Tk):
 
             # Imported with moviepy.editor
             video = VideoFileClip(self.file1)
+
+            messagebox.showinfo(
+                title="Important rendering information",
+                message="The Elgato Tool will not be responsive while your" +
+                        " video is rendering. Please do not repeatedly click" +
+                        " your mouse on the application as it may crash! The" +
+                        " tool will be responsive again once the render has" +
+                        " finalised."
+            )
 
             for lst in lstAnsTimes:
                 # Iterates through the start and end times
@@ -404,8 +414,9 @@ class Root(Tk):
 
                 if askUpdate is True:
                     subprocess.run("git pull")
+                    time.slepp(5)
                     subprocess.run(
-                        "start https://github.com/charmockridge/ElgatoTool"
+                        "start https://github.com/CharMockridge/ElgatoTool"
                     )
                 else:
                     return
