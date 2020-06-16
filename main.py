@@ -19,7 +19,7 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
-    currentVersion = "1.0.3"
+    currentVersion = "1.0.4"
 
     """
     On press of self.winRecord_resetBtn
