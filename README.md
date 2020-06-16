@@ -28,9 +28,11 @@ From there, you should navigate over to the "Render" tab where you should press 
 
 ## Updates, Fixes and Patch Notes
 * Updated README.md
-* Automatic check for updates once the program is opened - Check the ***Installation*** information to know if any more packages are needed to be downloaded.
+* Automatic check for updates once the program is opened - Check the ***Installation*** information to know if any more packages are needed to be downloaded
 * Update assister
-* Fixed render error - uninstall all packages (installed with pip) and reinstall following the **Installation** steps.
+* Fixed render error - uninstall all packages (installed with pip) and reinstall following the **Installation** steps
+* Made a modification to the update assister
+* Added additional information relating to rendering within the application
 
 
 ## Future Implements and Updates
@@ -47,5 +49,5 @@ Within the near future expect to see the following fixes and changes:
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-06-16 15:15:46
-<p>Version: 1.0.3</p>
+Last updated: 2020-06-16 21:00:06
+<p>Version: 1.0.4</p>
