@@ -414,7 +414,7 @@ class Root(Tk):
 
                 if askUpdate is True:
                     subprocess.run("git pull")
-                    time.slepp(5)
+                    time.sleep(5)
                     subprocess.run(
                         "start https://github.com/CharMockridge/ElgatoTool"
                     )
