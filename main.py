@@ -155,9 +155,9 @@ class Root(Tk):
     Binded to self.winRecord_linkTxt as on click
     Takes user to the settings tab
     """
-    # def onClick_winRecord_linkTxt(self, event):
-        # global tabControl
-        # tabControl.select(self.tab3)
+    def onClick_winRecord_linkTxt(self, event):
+        global tabControl
+        tabControl.select(self.tab3)
 
     """
     On press of self.winRender_videoBtn
@@ -218,9 +218,36 @@ class Root(Tk):
             self.file2 = ""
 
     """
+    On press of self.winRenSetting_loadsetBtn
+    Stores chosen export settings in variables ready for video exportation
+    """
+    def loadRenderSettings(self):
+        self.FPS = [None, 12, 15, 24, 25, 30, 50, 60]
+        self.Audio = [True, False]
+        self.AudioBitrate = [
+            None, "96k", "112k", "128k", "160k", "192k", "224k", "256k", "320k"
+        ]
+        self.chosenFPS = self.winRenSettings_fpsCmb.current()
+        self.chosenAudio = self.winRenSettings_audioCmb.current()
+        self.chosenAudioBitrate = self.winRenSettings_audiobitrateCmb.current()
+        self.loadFPS = self.FPS[self.chosenFPS]
+        self.loadAudio = self.Audio[self.chosenAudio]
+        self.loadAudioBitrate = self.AudioBitrate[self.chosenAudioBitrate]
+
+        if self.loadAudio is False:
+            self.loadAudioBitrate = None
+        else:
+            self.loadAudioBitrate = self.AudioBitrate[self.chosenAudioBitrate]
+
+        messagebox.showinfo(
+            title="Render settings loaded",
+            message="Your chosen render settings have been loaded, you can" +
+                    " now render your video!"
+        )
+
+    """
     On press of self.winRender_renderBtn
     Uses the module moviepy.editor
-    Find a way to close the video file
     """
     def renderVideo(self):
         # End of file name for the video rendered by moviepy.editor
@@ -292,9 +319,31 @@ class Root(Tk):
             # Imported with moviepy.editor
             video = VideoFileClip(self.file1)
 
+            self.displayFPS = ""
+            self.displayAudio = ""
+            self.displayAudioBitrate = ""
+
+            if self.loadFPS is None:
+                self.displayFPS = "Original"
+            else:
+                self.displayFPS = str(self.loadFPS)
+
+            if self.loadAudio is True:
+                self.displayAudio = "On"
+            else:
+                self.displayAudio = "Off"
+
+            if self.loadAudioBitrate is None:
+                self.displayAudioBitrate = "Original"
+            else:
+                self.displayAudioBitrate = str(self.loadAudioBitrate)
+
             messagebox.showinfo(
                 title="Important rendering information",
-                message="The Elgato Tool will not be responsive while your" +
+                message="Your chosen render settings are:\nFPS: " +
+                        self.displayFPS + "\nAudio: " + self.displayAudio +
+                        "\nAudio bitrate: " + self.displayAudioBitrate + "\n" +
+                        "\nThe Elgato Tool will not be responsive while your" +
                         " video is rendering. Please do not repeatedly click" +
                         " your mouse on the application as it may crash! The" +
                         " tool will be responsive again once the render has" +
@@ -310,10 +359,12 @@ class Root(Tk):
                 clip.write_videofile(
                     fileRender[:-4] + str(c) + ".mp4",
                     codec="libx264",
+                    fps=self.loadFPS,
+                    audio=self.loadAudio,
                     audio_codec="aac",
                     temp_audiofile="temp-audio.m4a",
                     remove_temp=True,
-                    audio_bitrate="192k"
+                    audio_bitrate=self.loadAudioBitrate
                 )
 
                 c += 1
@@ -331,6 +382,11 @@ class Root(Tk):
         global tabControl
         tabControl = ttk.Notebook(self)
 
+        # Default render settings - changeable within the Render Settings tab
+        self.loadFPS = None
+        self.loadAudio = True
+        self.loadAudioBitrate = None
+
         # Creates the 'Record' tab and frame
         self.tab1 = ttk.Frame(tabControl)
         tabControl.add(
@@ -345,14 +401,12 @@ class Root(Tk):
             text="Render"
         )
 
-        """
-        # Creates the 'Settings' tab and frame
+        # Creates the 'Render Settings' tab and frame
         self.tab3 = ttk.Frame(tabControl)
         tabControl.add(
             self.tab3,
-            text="Settings"
+            text="Render Settings"
         )
-        """
 
         tabControl.pack(
             expand=1,
@@ -364,8 +418,7 @@ class Root(Tk):
         # Initialises the widgets for the 'Render' tab
         self.winRender()
         # Initialises the widgets for the 'Settings' tab
-        # Explore possible features
-        # self.winSettings()
+        self.winRenSettings()
         # Uses BeautifulSoup4 to check for updates
         self.checkUpdates()
 
@@ -533,7 +586,6 @@ class Root(Tk):
             sticky="NESW"
         )
 
-        """
         # Widget
         self.winRecord_linkBtn = ttk.Label(
             self.tab1,
@@ -551,7 +603,6 @@ class Root(Tk):
             "<Button-1>",  # Left mouse click
             self.onClick_winRecord_linkTxt  # Calls this method
         )
-        """
 
     def winRender(self):
         self.a = 0  # Column assignment for radio buttons
@@ -683,20 +734,148 @@ class Root(Tk):
             sticky="NESW"
         )
 
-    """
-    def winSettings(self):
+    def winRenSettings(self):
+        # Style for buttons
+        s = ttk.Style()
+        s.configure('my.TButton', font=('Arial', 12))
+
         # Widget
-        self.winSettings_headerTxt = ttk.Label(
+        self.winRenSettings_headerTxt = ttk.Label(
             self.tab3,
-            text="Settings",
+            text="Render Settings",
             font=("Arial 16")
         )
-        self.winSettings_headerTxt.grid(
+        self.winRenSettings_headerTxt.grid(
             column=0,
             row=0,
             columnspan=2
         )
-    """
+
+        # Widget
+        self.winRenSettings_fpsTxt = ttk.Label(
+            self.tab3,
+            text="FPS:",
+            font=("Arial 12")
+        )
+        self.winRenSettings_fpsTxt.grid(
+            column=0,
+            row=1,
+            pady=(5, 0),
+            padx=(0, 1),
+            sticky="NESW"
+        )
+
+        # Widget
+        self.winRenSettings_fpsCmb = ttk.Combobox(
+            self.tab3,
+            values=[
+                "Original",
+                "12",
+                "15",
+                "24",
+                "25",
+                "30",
+                "50",
+                "60"
+            ],
+            state="readonly",
+            font=("Arial 12")
+        )
+        self.winRenSettings_fpsCmb.grid(
+            column=1,
+            row=1,
+            pady=(5, 0),
+            padx=(1, 0),
+            sticky="NESW"
+        )
+        self.winRenSettings_fpsCmb.current(0)
+
+        # Widget
+        self.winRenSettings_audioTxt = ttk.Label(
+            self.tab3,
+            text="Audio:",
+            font=("Arial 12")
+        )
+        self.winRenSettings_audioTxt.grid(
+            column=0,
+            row=2,
+            pady=(2.5, 0),
+            padx=(0, 1),
+            sticky="NESW"
+        )
+
+        # Widget
+        self.winRenSettings_audioCmb = ttk.Combobox(
+            self.tab3,
+            values=[
+                "On",
+                "Off",
+            ],
+            state="readonly",
+            font=("Arial 12")
+        )
+        self.winRenSettings_audioCmb.grid(
+            column=1,
+            row=2,
+            pady=(2.5, 0),
+            padx=(1, 0),
+            sticky="NESW"
+        )
+        self.winRenSettings_audioCmb.current(0)
+
+        # Widget
+        self.winRenSettings_audiobitrateTxt = ttk.Label(
+            self.tab3,
+            text="Audio bitrate:",
+            font=("Arial 12")
+        )
+        self.winRenSettings_audiobitrateTxt.grid(
+            column=0,
+            row=3,
+            pady=(2.5, 0),
+            padx=(0, 1),
+            sticky="NESW"
+        )
+
+        # Widget
+        self.winRenSettings_audiobitrateCmb = ttk.Combobox(
+            self.tab3,
+            values=[
+                "Original",
+                "96k",
+                "112k",
+                "128k",
+                "160k",
+                "192k",
+                "224k",
+                "256k",
+                "320k",
+            ],
+            state="readonly",
+            font=("Arial 12")
+        )
+        self.winRenSettings_audiobitrateCmb.grid(
+            column=1,
+            row=3,
+            pady=(2.5, 0),
+            padx=(1, 0),
+            sticky="NESW"
+        )
+        self.winRenSettings_audiobitrateCmb.current(0)
+
+        # Widget
+        self.winRenSettings_loadsetBtn = ttk.Button(
+            self.tab3,
+            text="Load Render Settings",
+            style="my.TButton",
+            command=self.loadRenderSettings
+        )
+        self.winRenSettings_loadsetBtn.grid(
+            column=0,
+            row=4,
+            columnspan=2,
+            pady=(5, 0)
+        )
 
 
 if __name__ == "__main__":
