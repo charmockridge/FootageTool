@@ -33,12 +33,12 @@ From there, you should navigate over to the "Render" tab where you should press 
 * Fixed render error - uninstall all packages (installed with pip) and reinstall following the **Installation** steps
 * Made a modification to the update assister
 * Added additional information relating to rendering within the application
+* Option to allow user-defined fps and audio bitrate
 
 
 ## Future Implements and Updates
 Within the near future expect to see the following fixes and changes:
 
-* Render in with user-defined resolution, fps and audio bitrate
 * Display quality details of inputted .mp4 file
 * Display quality details of rendered video
 * The ability to see marked times whilst recording
@@ -49,5 +49,5 @@ Within the near future expect to see the following fixes and changes:
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-06-16 21:00:06
-<p>Version: 1.0.4</p>
+Last updated: 2020-06-19 17:05:30
+<p>Version: 1.1.0</p>
