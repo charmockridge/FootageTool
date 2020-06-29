@@ -34,6 +34,9 @@ From there, you should navigate over to the "Render" tab where you should press 
 * Made a modification to the update assister
 * Added additional information relating to rendering within the application
 * Option to allow user-defined fps and audio bitrate
+* Implemented a tree view so user can now see their marked times within the application
+* The application now has an icon (subject to change)
+* Made a couple of tweaks to the update assister
 
 
 ## Future Implements and Updates
@@ -49,5 +52,5 @@ Within the near future expect to see the following fixes and changes:
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-06-19 17:05:30
-<p>Version: 1.1.0</p>
+Last updated: 2020-06-29 14:36:36
+<p>Version: 1.1.1</p>
