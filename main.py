@@ -19,7 +19,7 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
-    currentVersion = "1.1.0"
+    currentVersion = "1.1.1"
 
     """
     On press of self.winRecord_resetBtn
@@ -34,6 +34,10 @@ class Root(Tk):
         self.time.set("00:00:00")
         self.display = "00:00:00"
         stamps.clear()
+        self.winRecord_stampsLst.config(height=len(stamps))
+        self.winRecord_stampsLst.delete(
+            *self.winRecord_stampsLst.get_children()
+        )
 
     """
     On press of self.winRecord_stopBtn
@@ -111,6 +115,10 @@ class Root(Tk):
     """
     def mark(self):
         stamps.append(str(self.display))
+
+        for tstamp in stamps:
+            self.winRecord_stampsLst.insert("", 0, text=str(tstamp))
+            self.winRecord_stampsLst.config(height=len(stamps))
 
     """
     On press of self.winRecord_exportBtn
@@ -377,6 +385,7 @@ class Root(Tk):
         super(Root, self).__init__()
 
         self.title("Elgato Tool")
+        self.iconbitmap(r"img/icon.ico")
 
         # Creates tabControl
         global tabControl
@@ -468,9 +477,16 @@ class Root(Tk):
                 if askUpdate is True:
                     subprocess.run("git pull")
                     time.sleep(5)
-                    subprocess.run(
-                        "start https://github.com/CharMockridge/ElgatoTool"
+                    messagebox.showinfo(
+                        title="Update complete",
+                        message="The update has completed. The application" +
+                                " will now close and once you have reopened" +
+                                " the application it will be up to date. To" +
+                                " see fixes, patches and updates please" +
+                                " navigate to" +
+                                " https://github.com/charmockridge/ElgatoTool"
                     )
+                    self.destroy()
                 else:
                     return
         except Exception:
@@ -587,6 +603,20 @@ class Root(Tk):
         )
 
         # Widget
+        self.winRecord_stampsLst = ttk.Treeview(
+            self.tab1,
+            selectmode="none",
+            height=int(len(stamps)) - 1,
+        )
+        self.winRecord_stampsLst.grid(
+            column=0,
+            row=5,
+            columnspan=2,
+            pady=(5, 0),
+            sticky="NESW"
+        )
+
+        # Widget
         self.winRecord_linkBtn = ttk.Label(
             self.tab1,
             text="Have you checked your export settings?",
@@ -595,9 +625,9 @@ class Root(Tk):
         )
         self.winRecord_linkBtn.grid(
             column=0,
-            row=5,
+            row=6,
             columnspan=2,
-            pady=(5, 0)
+            pady=(2.5, 0)
         )
         self.winRecord_linkBtn.bind(
             "<Button-1>",  # Left mouse click
