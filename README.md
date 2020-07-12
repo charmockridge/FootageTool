@@ -37,11 +37,13 @@ From there, you should navigate over to the "Render" tab where you should press 
 * Implemented a tree view so user can now see their marked times within the application
 * The application now has an icon (subject to change)
 * Made a couple of tweaks to the update assister
+* Fixed issue where the treeview containing stamped times would resize on the press of the reset button
 
 
 ## Future Implements and Updates
 Within the near future expect to see the following fixes and changes:
 
+* Make additional changes to the treeview containing stamped times
 * Display quality details of inputted .mp4 file
 * Display quality details of rendered video
 * The ability to see marked times whilst recording
@@ -52,5 +54,5 @@ Within the near future expect to see the following fixes and changes:
 
 # Developer
 Charlie Mockridge<br>
-Last updated: 2020-06-29 14:36:36
-<p>Version: 1.1.1</p>
+Last updated: 2020-07-12 17:37:05
+<p>Version: 1.1.2</p>
