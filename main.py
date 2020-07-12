@@ -19,7 +19,7 @@ stamps = []  # Contains all of the time stamps
 
 
 class Root(Tk):
-    currentVersion = "1.1.1"
+    currentVersion = "1.1.2"
 
     """
     On press of self.winRecord_resetBtn
@@ -34,7 +34,8 @@ class Root(Tk):
         self.time.set("00:00:00")
         self.display = "00:00:00"
         stamps.clear()
-        self.winRecord_stampsLst.config(height=len(stamps))
+        # This makes the widgets increase in width
+        self.winRecord_stampsLst.config(height=0)  # Fix this line
         self.winRecord_stampsLst.delete(
             *self.winRecord_stampsLst.get_children()
         )
@@ -606,7 +607,9 @@ class Root(Tk):
         self.winRecord_stampsLst = ttk.Treeview(
             self.tab1,
             selectmode="none",
-            height=int(len(stamps)) - 1,
+            # value="Marked Times:",
+            height=0,
+            # columns=("A")
         )
         self.winRecord_stampsLst.grid(
             column=0,
@@ -614,6 +617,14 @@ class Root(Tk):
             columnspan=2,
             pady=(5, 0),
             sticky="NESW"
+        )
+        self.winRecord_stampsLst.heading(
+            "#0",
+            text="Marked Times:"
+        )
+        self.winRecord_stampsLst.column(
+            "#0",
+            stretch=NO
         )
 
         # Widget
