@@ -13,9 +13,13 @@ Follow steps below for installation:
 
 * Then open the solution file FootageTool.sln in Visual Studio and install the NuGet package "HtmlAgilityPack".
 
-* Build the solution by pressing Ctrl+Shift+B.
+* Build the solution by pressing **Ctrl+Shift+B**.
 
-* Install FFmpeg and put it into the Debug folder.
+* Install FFmpeg from this link [here](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z).
+
+* Extract the files from the .7z zip archive and locate ffmpeg.exe and ffprobe.exe both located in **ffmpeg-[date]-git[string of characters and number]-essentials_build/bin**
+
+* Finally, drag both files into the project's debug directory located at **FootageTool/FootageTool/bin/Debug** where FootageTool.exe is also located.
 
 
 ## Usage
@@ -26,6 +30,8 @@ From there, you should navigate over to the "Render" tab where you should press 
 
 ## Updates, Fixes and Patch Notes
 * Updated README.md
+* FFmpeg and FFprobe path change
+* Minor update to the program's UI
 * Changed program language from Python 3.7.3 to C# .NET Framework 4.7.2 Windows Forms Application, therefore no longer using the Tkinter module
 * Changed the module used for rendering from PyMovie to FFmpeg
 
@@ -33,7 +39,6 @@ From there, you should navigate over to the "Render" tab where you should press 
 ## Future Implements and Updates
 Within the near future expect to see the following fixes and changes:
 
-* Minor layout design update
 * Display quality details of inputted .mp4 file
 * Display quality details of rendered video
 * Enter custom time cushion as opposed to predetermined times
@@ -44,4 +49,4 @@ Within the near future expect to see the following fixes and changes:
 # Developer
 Charlie Mockridge<br>
 Last updated: 2020-07-12 17:37:05
-<p>Version: 2.0.1</p>
+<p>Version: 2.0.2</p>
