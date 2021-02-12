@@ -13,11 +13,11 @@ Follow steps below for installation:
 
 * Then open the solution file FootageTool.sln in Visual Studio and install the NuGet package "HtmlAgilityPack".
 
-* Build the solution by pressing **Ctrl+Shift+B**.
+* Build the solution by pressing **Ctrl+Shift+B** or **Build** > **Build Solution** on the toolbar.
 
 * Install FFmpeg from this link [here](https://www.gyan.dev/ffmpeg/builds/ffmpeg-git-essentials.7z).
 
-* Extract the files from the .7z zip archive and locate ffmpeg.exe and ffprobe.exe both located in **ffmpeg-[date]-git[string of characters and number]-essentials_build/bin**
+* Extract the files from the .7z zip archive and locate ffmpeg.exe and ffprobe.exe both located in **ffmpeg-[date]-git-[string of characters and number]-essentials_build/bin**
 
 * Finally, drag both files into the project's debug directory located at **FootageTool/FootageTool/bin/Debug** where FootageTool.exe is also located.
 
