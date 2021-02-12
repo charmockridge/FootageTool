@@ -17,7 +17,7 @@ namespace FootageTool
     public partial class Form1 : Form
     {
         // Running application version
-        private const string appVersion = "2.0.1";
+        private const string appVersion = "2.0.2";
         // URL to github repo.
         private string _url = "https://github.com/charmockridge/FootageTool";
         // Stores the seconds for the stopwatch.
@@ -511,7 +511,7 @@ namespace FootageTool
                     CreateNoWindow = true,
                     UseShellExecute = false,
                     FileName = AppDomain.CurrentDomain.BaseDirectory +
-                               "\\ffmpeg\\ffmpeg\\bin\\ffprobe.exe",
+                               "\\ffprobe.exe",
                     WindowStyle = ProcessWindowStyle.Hidden,
                     Arguments = "-v error -show_entries format=duration -of" + 
                                 " default=noprint_wrappers=1:nokey=1 -sexagesimal" + 
@@ -552,7 +552,7 @@ namespace FootageTool
                             CreateNoWindow = false,
                             UseShellExecute = false,
                             FileName = AppDomain.CurrentDomain.BaseDirectory +
-                                       "\\ffmpeg\\ffmpeg\\bin\\ffmpeg.exe",
+                                       "\\ffmpeg.exe",
                             WindowStyle = ProcessWindowStyle.Maximized,
                             Arguments = $"-i \"{_videoFilePath}\" -ss {start} -to {end}" + 
                                 $" \"{_renderFilePath.Substring(0, _renderFilePath.Length - 4)}" +

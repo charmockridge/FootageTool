@@ -74,7 +74,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(776, 426);
+            this.tabControl1.Size = new System.Drawing.Size(205, 310);
             this.tabControl1.TabIndex = 0;
             // 
             // winRecord
@@ -95,7 +95,7 @@
             this.winRecord.Location = new System.Drawing.Point(4, 22);
             this.winRecord.Name = "winRecord";
             this.winRecord.Padding = new System.Windows.Forms.Padding(3);
-            this.winRecord.Size = new System.Drawing.Size(768, 400);
+            this.winRecord.Size = new System.Drawing.Size(197, 284);
             this.winRecord.TabIndex = 0;
             this.winRecord.Text = "Record";
             this.winRecord.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@
             // lstTimeStamps
             // 
             this.lstTimeStamps.FormattingEnabled = true;
-            this.lstTimeStamps.Location = new System.Drawing.Point(301, 193);
+            this.lstTimeStamps.Location = new System.Drawing.Point(5, 193);
             this.lstTimeStamps.Name = "lstTimeStamps";
-            this.lstTimeStamps.Size = new System.Drawing.Size(165, 95);
+            this.lstTimeStamps.Size = new System.Drawing.Size(185, 82);
             this.lstTimeStamps.TabIndex = 5;
             // 
             // button3
@@ -119,9 +119,9 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(391, 100);
+            this.btnStop.Location = new System.Drawing.Point(105, 100);
             this.btnStop.Name = "btnStop";
-            this.btnStop.Size = new System.Drawing.Size(75, 25);
+            this.btnStop.Size = new System.Drawing.Size(85, 25);
             this.btnStop.TabIndex = 3;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
@@ -129,9 +129,9 @@
             // 
             // btnMark
             // 
-            this.btnMark.Location = new System.Drawing.Point(301, 162);
+            this.btnMark.Location = new System.Drawing.Point(5, 162);
             this.btnMark.Name = "btnMark";
-            this.btnMark.Size = new System.Drawing.Size(165, 25);
+            this.btnMark.Size = new System.Drawing.Size(185, 25);
             this.btnMark.TabIndex = 3;
             this.btnMark.Text = "Mark";
             this.btnMark.UseVisualStyleBackColor = true;
@@ -139,9 +139,9 @@
             // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(391, 131);
+            this.btnExport.Location = new System.Drawing.Point(105, 131);
             this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(75, 25);
+            this.btnExport.Size = new System.Drawing.Size(85, 25);
             this.btnExport.TabIndex = 3;
             this.btnExport.Text = "Export";
             this.btnExport.UseVisualStyleBackColor = true;
@@ -149,9 +149,9 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(301, 131);
+            this.btnReset.Location = new System.Drawing.Point(5, 131);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 25);
+            this.btnReset.Size = new System.Drawing.Size(85, 25);
             this.btnReset.TabIndex = 3;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -159,9 +159,9 @@
             // 
             // btnStart
             // 
-            this.btnStart.Location = new System.Drawing.Point(301, 100);
+            this.btnStart.Location = new System.Drawing.Point(5, 100);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(75, 25);
+            this.btnStart.Size = new System.Drawing.Size(85, 25);
             this.btnStart.TabIndex = 3;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -171,7 +171,7 @@
             // 
             this.lblColonFormat2.AutoSize = true;
             this.lblColonFormat2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonFormat2.Location = new System.Drawing.Point(409, 50);
+            this.lblColonFormat2.Location = new System.Drawing.Point(126, 50);
             this.lblColonFormat2.Name = "lblColonFormat2";
             this.lblColonFormat2.Size = new System.Drawing.Size(19, 25);
             this.lblColonFormat2.TabIndex = 2;
@@ -182,7 +182,7 @@
             // 
             this.lblColonFormat.AutoSize = true;
             this.lblColonFormat.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblColonFormat.Location = new System.Drawing.Point(340, 50);
+            this.lblColonFormat.Location = new System.Drawing.Point(55, 50);
             this.lblColonFormat.Name = "lblColonFormat";
             this.lblColonFormat.Size = new System.Drawing.Size(19, 25);
             this.lblColonFormat.TabIndex = 2;
@@ -193,7 +193,7 @@
             // 
             this.lblHours.AutoSize = true;
             this.lblHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHours.Location = new System.Drawing.Point(296, 50);
+            this.lblHours.Location = new System.Drawing.Point(5, 50);
             this.lblHours.Name = "lblHours";
             this.lblHours.Size = new System.Drawing.Size(38, 25);
             this.lblHours.TabIndex = 1;
@@ -204,7 +204,7 @@
             // 
             this.lblSeconds.AutoSize = true;
             this.lblSeconds.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSeconds.Location = new System.Drawing.Point(434, 50);
+            this.lblSeconds.Location = new System.Drawing.Point(152, 50);
             this.lblSeconds.Name = "lblSeconds";
             this.lblSeconds.Size = new System.Drawing.Size(38, 25);
             this.lblSeconds.TabIndex = 1;
@@ -215,7 +215,7 @@
             // 
             this.lblMinutes.AutoSize = true;
             this.lblMinutes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMinutes.Location = new System.Drawing.Point(365, 50);
+            this.lblMinutes.Location = new System.Drawing.Point(81, 50);
             this.lblMinutes.Name = "lblMinutes";
             this.lblMinutes.Size = new System.Drawing.Size(38, 25);
             this.lblMinutes.TabIndex = 1;
@@ -226,7 +226,7 @@
             // 
             this.lblRecordTitle.AutoSize = true;
             this.lblRecordTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRecordTitle.Location = new System.Drawing.Point(351, 10);
+            this.lblRecordTitle.Location = new System.Drawing.Point(64, 10);
             this.lblRecordTitle.Name = "lblRecordTitle";
             this.lblRecordTitle.Size = new System.Drawing.Size(67, 20);
             this.lblRecordTitle.TabIndex = 0;
@@ -254,16 +254,16 @@
             this.winRender.Location = new System.Drawing.Point(4, 22);
             this.winRender.Name = "winRender";
             this.winRender.Padding = new System.Windows.Forms.Padding(3);
-            this.winRender.Size = new System.Drawing.Size(768, 400);
+            this.winRender.Size = new System.Drawing.Size(197, 284);
             this.winRender.TabIndex = 1;
             this.winRender.Text = "Render";
             this.winRender.UseVisualStyleBackColor = true;
             // 
             // btnRender
             // 
-            this.btnRender.Location = new System.Drawing.Point(284, 250);
+            this.btnRender.Location = new System.Drawing.Point(5, 250);
             this.btnRender.Name = "btnRender";
-            this.btnRender.Size = new System.Drawing.Size(200, 25);
+            this.btnRender.Size = new System.Drawing.Size(185, 25);
             this.btnRender.TabIndex = 3;
             this.btnRender.Text = "Render";
             this.btnRender.UseVisualStyleBackColor = true;
@@ -272,7 +272,7 @@
             // rbtn30Sec
             // 
             this.rbtn30Sec.AutoSize = true;
-            this.rbtn30Sec.Location = new System.Drawing.Point(389, 100);
+            this.rbtn30Sec.Location = new System.Drawing.Point(105, 100);
             this.rbtn30Sec.Name = "rbtn30Sec";
             this.rbtn30Sec.Size = new System.Drawing.Size(82, 17);
             this.rbtn30Sec.TabIndex = 2;
@@ -283,7 +283,7 @@
             // rbtn2Hour
             // 
             this.rbtn2Hour.AutoSize = true;
-            this.rbtn2Hour.Location = new System.Drawing.Point(389, 215);
+            this.rbtn2Hour.Location = new System.Drawing.Point(105, 215);
             this.rbtn2Hour.Name = "rbtn2Hour";
             this.rbtn2Hour.Size = new System.Drawing.Size(62, 17);
             this.rbtn2Hour.TabIndex = 2;
@@ -294,7 +294,7 @@
             // rbtn1Hour
             // 
             this.rbtn1Hour.AutoSize = true;
-            this.rbtn1Hour.Location = new System.Drawing.Point(284, 215);
+            this.rbtn1Hour.Location = new System.Drawing.Point(5, 215);
             this.rbtn1Hour.Name = "rbtn1Hour";
             this.rbtn1Hour.Size = new System.Drawing.Size(57, 17);
             this.rbtn1Hour.TabIndex = 2;
@@ -305,7 +305,7 @@
             // rbtn45Min
             // 
             this.rbtn45Min.AutoSize = true;
-            this.rbtn45Min.Location = new System.Drawing.Point(389, 192);
+            this.rbtn45Min.Location = new System.Drawing.Point(105, 192);
             this.rbtn45Min.Name = "rbtn45Min";
             this.rbtn45Min.Size = new System.Drawing.Size(77, 17);
             this.rbtn45Min.TabIndex = 2;
@@ -316,7 +316,7 @@
             // rbtn30Min
             // 
             this.rbtn30Min.AutoSize = true;
-            this.rbtn30Min.Location = new System.Drawing.Point(284, 192);
+            this.rbtn30Min.Location = new System.Drawing.Point(5, 192);
             this.rbtn30Min.Name = "rbtn30Min";
             this.rbtn30Min.Size = new System.Drawing.Size(77, 17);
             this.rbtn30Min.TabIndex = 2;
@@ -327,7 +327,7 @@
             // rbtn15Min
             // 
             this.rbtn15Min.AutoSize = true;
-            this.rbtn15Min.Location = new System.Drawing.Point(389, 169);
+            this.rbtn15Min.Location = new System.Drawing.Point(105, 169);
             this.rbtn15Min.Name = "rbtn15Min";
             this.rbtn15Min.Size = new System.Drawing.Size(77, 17);
             this.rbtn15Min.TabIndex = 2;
@@ -338,7 +338,7 @@
             // rbtn10Min
             // 
             this.rbtn10Min.AutoSize = true;
-            this.rbtn10Min.Location = new System.Drawing.Point(284, 169);
+            this.rbtn10Min.Location = new System.Drawing.Point(5, 169);
             this.rbtn10Min.Name = "rbtn10Min";
             this.rbtn10Min.Size = new System.Drawing.Size(77, 17);
             this.rbtn10Min.TabIndex = 2;
@@ -349,7 +349,7 @@
             // rbtn5Min
             // 
             this.rbtn5Min.AutoSize = true;
-            this.rbtn5Min.Location = new System.Drawing.Point(389, 146);
+            this.rbtn5Min.Location = new System.Drawing.Point(105, 146);
             this.rbtn5Min.Name = "rbtn5Min";
             this.rbtn5Min.Size = new System.Drawing.Size(71, 17);
             this.rbtn5Min.TabIndex = 2;
@@ -360,7 +360,7 @@
             // rbtn2Min
             // 
             this.rbtn2Min.AutoSize = true;
-            this.rbtn2Min.Location = new System.Drawing.Point(284, 146);
+            this.rbtn2Min.Location = new System.Drawing.Point(5, 146);
             this.rbtn2Min.Name = "rbtn2Min";
             this.rbtn2Min.Size = new System.Drawing.Size(71, 17);
             this.rbtn2Min.TabIndex = 2;
@@ -371,7 +371,7 @@
             // rbtn1Min
             // 
             this.rbtn1Min.AutoSize = true;
-            this.rbtn1Min.Location = new System.Drawing.Point(389, 123);
+            this.rbtn1Min.Location = new System.Drawing.Point(105, 123);
             this.rbtn1Min.Name = "rbtn1Min";
             this.rbtn1Min.Size = new System.Drawing.Size(66, 17);
             this.rbtn1Min.TabIndex = 2;
@@ -382,7 +382,7 @@
             // rbtn45Sec
             // 
             this.rbtn45Sec.AutoSize = true;
-            this.rbtn45Sec.Location = new System.Drawing.Point(284, 123);
+            this.rbtn45Sec.Location = new System.Drawing.Point(5, 123);
             this.rbtn45Sec.Name = "rbtn45Sec";
             this.rbtn45Sec.Size = new System.Drawing.Size(82, 17);
             this.rbtn45Sec.TabIndex = 2;
@@ -393,7 +393,7 @@
             // rbtn15Sec
             // 
             this.rbtn15Sec.AutoSize = true;
-            this.rbtn15Sec.Location = new System.Drawing.Point(284, 100);
+            this.rbtn15Sec.Location = new System.Drawing.Point(5, 100);
             this.rbtn15Sec.Name = "rbtn15Sec";
             this.rbtn15Sec.Size = new System.Drawing.Size(82, 17);
             this.rbtn15Sec.TabIndex = 2;
@@ -405,7 +405,7 @@
             // 
             this.lblRenderTitle.AutoSize = true;
             this.lblRenderTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRenderTitle.Location = new System.Drawing.Point(350, 10);
+            this.lblRenderTitle.Location = new System.Drawing.Point(63, 10);
             this.lblRenderTitle.Name = "lblRenderTitle";
             this.lblRenderTitle.Size = new System.Drawing.Size(68, 20);
             this.lblRenderTitle.TabIndex = 1;
@@ -414,9 +414,9 @@
             // 
             // btnLoadTime
             // 
-            this.btnLoadTime.Location = new System.Drawing.Point(389, 50);
+            this.btnLoadTime.Location = new System.Drawing.Point(105, 50);
             this.btnLoadTime.Name = "btnLoadTime";
-            this.btnLoadTime.Size = new System.Drawing.Size(95, 25);
+            this.btnLoadTime.Size = new System.Drawing.Size(85, 25);
             this.btnLoadTime.TabIndex = 0;
             this.btnLoadTime.Text = "Pick Time File";
             this.btnLoadTime.UseVisualStyleBackColor = true;
@@ -424,9 +424,9 @@
             // 
             // btnLoadVideo
             // 
-            this.btnLoadVideo.Location = new System.Drawing.Point(284, 50);
+            this.btnLoadVideo.Location = new System.Drawing.Point(5, 50);
             this.btnLoadVideo.Name = "btnLoadVideo";
-            this.btnLoadVideo.Size = new System.Drawing.Size(95, 25);
+            this.btnLoadVideo.Size = new System.Drawing.Size(85, 25);
             this.btnLoadVideo.TabIndex = 0;
             this.btnLoadVideo.Text = "Pick Video File";
             this.btnLoadVideo.UseVisualStyleBackColor = true;
@@ -441,7 +441,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(228, 333);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Footage Tool";
